@@ -12,10 +12,18 @@ class Test(TestCase):
         for value1, value2, expected in tests:
             with self.subTest(f"{value1}, {value2} -> {expected}"):
                 actual = basicmath.addition(value1, value2)
-                self.assertEqual(expected, actual)
+                self.assertEqual(actual, expected)
 
     def test_subtraction(self):
-        self.fail()
+        tests = [
+            [2, 3, -1],
+            [10, 2, 8],
+            [200, 3, 197]
+        ]
+        for value1, value2, expected in tests:
+            with self.subTest(f"{value1}, {value2} -> {expected}"):
+                actual = basicmath.subtraction(value1, value2)
+                self.assertEqual(actual, expected)
 
     def test_multiply(self):
         self.fail()
