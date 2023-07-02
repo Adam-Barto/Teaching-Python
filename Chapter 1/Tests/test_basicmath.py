@@ -26,7 +26,15 @@ class Test(TestCase):
                 self.assertEqual(actual, expected)
 
     def test_multiply(self):
-        self.fail()
+        tests = [
+            [2, 3, 6],
+            [10, 2, 20],
+            [200, 3, 600]
+        ]
+        for value1, value2, expected in tests:
+            with self.subTest(f"{value1}, {value2} -> {expected}"):
+                actual = basicmath.multiply(value1, value2)
+                self.assertEqual(actual, expected)
 
     def test_divide(self):
         self.fail()
