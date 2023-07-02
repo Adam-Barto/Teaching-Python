@@ -48,4 +48,12 @@ class Test(TestCase):
                 self.assertEqual(actual, expected)
 
     def test_remainder(self):
-        self.fail()
+        tests = [
+            [6, 3, 0],
+            [20, 3, 2],
+            [100, 99, 1]
+        ]
+        for value1, value2, expected in tests:
+            with self.subTest(f"{value1}, {value2} -> {expected}"):
+                actual = basicmath.remainder(value1, value2)
+                self.assertEqual(actual, expected)
