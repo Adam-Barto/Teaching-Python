@@ -38,7 +38,14 @@ class Test(TestCase):
                 self.assertEqual(actual, expected)
 
     def test_cut_string_in_half(self):
-        self.fail()
+        tests = [
+            ["Egads, you have divided me!", "ve divided me!"],
+            ["How Dare", "Dare!"]
+        ]
+        for the_string, expected in tests:
+            with self.subTest(f"{the_string} -> {expected}"):
+                actual = sm.reverse(the_string)
+                self.assertEqual(actual, expected)
 
     def test_remove_character(self):
         self.fail()
