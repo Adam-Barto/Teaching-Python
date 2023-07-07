@@ -22,12 +22,20 @@ class Test(TestCase):
         ]
         for the_string, expected in tests:
             with self.subTest(f"{the_string} -> {expected}"):
-                actual = sm.make_lowercase(the_string)
+                actual = sm.make_uppercase(the_string)
                 self.assertEqual(actual, expected)
 
 
     def test_reverse(self):
-        self.fail()
+        tests = [
+            ["racecar", "racecar"],
+            ["Reverse Me Please","esaelP eM esreveR"],
+            ["we're number 1!", "!1 rebmun er'ew"]
+        ]
+        for the_string, expected in tests:
+            with self.subTest(f"{the_string} -> {expected}"):
+                actual = sm.reverse(the_string)
+                self.assertEqual(actual, expected)
 
     def test_cut_string_in_half(self):
         self.fail()
