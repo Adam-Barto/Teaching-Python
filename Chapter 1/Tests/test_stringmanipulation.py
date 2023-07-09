@@ -37,6 +37,17 @@ class Test(TestCase):
                 actual = sm.reverse(the_string)
                 self.assertEqual(actual, expected)
 
+
+    def test_string_length(self):
+        tests = [
+            ["I am the very model of a modern major general", 45],
+            ["This string is 33 characters long", 33]
+        ]
+        for the_string, expected in tests:
+            with self.subTest(f"{the_string} -> {expected}"):
+                actual = sm.length(the_string)
+                self.assertEqual(actual, expected)
+
     def test_cut_string_in_half(self):
         tests = [
             ["Egads, you have divided me!", "ve divided me!"],
