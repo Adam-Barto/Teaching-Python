@@ -59,7 +59,14 @@ class Test(TestCase):
                 self.assertEqual(actual, expected)
 
     def test_remove_character(self):
-        self.fail()
+        tests = [
+            ["Hello there my friend!", "e", "Hllo thr my frind!"],
+            ["A large collection of words", "l", "A arge coection of words"]
+        ]
+        for the_string,the_character, expected in tests:
+            with self.subTest(f"{the_string},{the_character} -> {expected}"):
+                actual = sm.remove_character(the_string, the_character)
+                self.assertEqual(actual, expected)
 
     def test_remove_word(self):
         self.fail()
